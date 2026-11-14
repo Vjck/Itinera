@@ -1,0 +1,155 @@
+Test Case '-[ItineraUITests.ScreenshotTests testMainScreens]' started.
+Test Case '-[ItineraUITests.ScreenshotTests testMainScreens]' passed (92.846 seconds).
+** TEST SUCCEEDED **
+
+--- ultime righe ---
+Copy /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/Frameworks/Testing.framework /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework (in target 'ItineraUITests' from project 'Itinera')
+    cd /Users/runner/work/Itinera/Itinera
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/Frameworks
+
+CodeSign /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/PlugIns/ItineraUITests.xctest (in target 'ItineraUITests' from project 'Itinera')
+    cd /Users/runner/work/Itinera/Itinera
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/PlugIns/ItineraUITests.xctest
+
+CodeSign /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app (in target 'ItineraUITests' from project 'Itinera')
+    cd /Users/runner/work/Itinera/Itinera
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app
+/Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app: replacing existing signature
+
+RegisterExecutionPolicyException /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/PlugIns/ItineraUITests.xctest (in target 'ItineraUITests' from project 'Itinera')
+    cd /Users/runner/work/Itinera/Itinera
+    builtin-RegisterExecutionPolicyException /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/PlugIns/ItineraUITests.xctest
+
+Touch /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/PlugIns/ItineraUITests.xctest (in target 'ItineraUITests' from project 'Itinera')
+    cd /Users/runner/work/Itinera/Itinera
+    /usr/bin/touch -c /Users/runner/work/Itinera/Itinera/build-ui/Build/Products/Debug-iphonesimulator/ItineraUITests-Runner.app/PlugIns/ItineraUITests.xctest
+
+2026-11-14 11:04:45.459600+0000 ItineraUITests-Runner[8936:30156] [UIKit App Config] `UIScene` lifecycle will soon be required. Failure to adopt will result in an assert in the future.
+2026-11-14 11:04:45.479808+0000 ItineraUITests-Runner[8936:30156] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'All tests' started at 2026-11-14 11:04:56.694.
+Test Suite 'ItineraUITests.xctest' started at 2026-11-14 11:04:56.702.
+Test Suite 'ScreenshotTests' started at 2026-11-14 11:04:56.702.
+Test Case '-[ItineraUITests.ScreenshotTests testMainScreens]' started.
+    t =     0.00s Start Test at 2026-11-14 11:04:56.703
+    t =     1.42s Set Up
+    t =     1.44s     Open com.itinera.app
+    t =     1.44s         Launch com.itinera.app
+    t =    24.39s             Setting up automation session
+    t =    27.98s             Wait for com.itinera.app to idle
+    t =    31.31s Waiting 30.0s for "Praga" StaticText to exist
+    t =    32.36s     Checking `Expect predicate `existsNoRetry == 1` for object "Praga" StaticText`
+    t =    32.37s         Checking existence of `"Praga" StaticText`
+    t =    33.90s Added attachment named '01-Elenco-viaggi'
+    t =    36.22s Tap "Praga" StaticText
+    t =    36.23s     Wait for com.itinera.app to idle
+    t =    36.23s     Find the "Praga" StaticText
+    t =    36.33s     Check for interrupting elements affecting "Praga" StaticText
+    t =    36.37s     Synthesize event
+    t =    36.82s     Wait for com.itinera.app to idle
+    t =    37.16s Waiting 10.0s for SegmentedControl (First Match) to exist
+    t =    38.22s     Checking `Expect predicate `existsNoRetry == 1` for object SegmentedControl (First Match)`
+    t =    38.22s         Checking existence of `SegmentedControl (First Match)`
+    t =    39.44s Added attachment named '02-Giorni'
+    t =    43.63s Waiting 5.0s for "add" Button to exist
+    t =    44.64s     Checking `Expect predicate `existsNoRetry == 1` for object "add" Button`
+    t =    44.64s         Checking existence of `"add" Button`
+    t =    44.68s Tap "add" Button
+    t =    44.68s     Wait for com.itinera.app to idle
+    t =    44.68s     Find the "add" Button
+    t =    44.72s     Check for interrupting elements affecting "add" Button
+    t =    44.80s     Synthesize event
+    t =    45.09s     Wait for com.itinera.app to idle
+    t =    45.45s Waiting 5.0s for "Annulla" Button to exist
+    t =    46.50s     Checking `Expect predicate `existsNoRetry == 1` for object "Annulla" Button`
+    t =    46.50s         Checking existence of `"Annulla" Button`
+    t =    47.81s Added attachment named '03-Nuova-tappa'
+    t =    51.52s Checking existence of `"Annulla" Button`
+    t =    51.70s Tap "Annulla" Button
+    t =    51.70s     Wait for com.itinera.app to idle
+    t =    51.71s     Find the "Annulla" Button
+    t =    51.88s     Check for interrupting elements affecting "Annulla" Button
+    t =    52.03s     Synthesize event
+    t =    52.36s     Wait for com.itinera.app to idle
+    t =    53.79s Tap "Mappa" Button
+    t =    53.79s     Wait for com.itinera.app to idle
+    t =    53.79s     Find the "Mappa" Button
+    t =    53.87s     Check for interrupting elements affecting "Mappa" Button
+    t =    53.97s     Synthesize event
+    t =    54.29s     Wait for com.itinera.app to idle
+    t =    55.58s Waiting 5.0s for "Allow While Using App" Button to exist
+    t =    56.58s     Checking `Expect predicate `existsNoRetry == 1` for object "Allow While Using App" Button`
+    t =    56.59s         Checking existence of `"Allow While Using App" Button`
+    t =    56.95s Tap "Allow While Using App" Button
+    t =    56.95s     Wait for com.apple.springboard to idle
+    t =    56.96s     Find the "Allow While Using App" Button
+    t =    57.00s     Check for interrupting elements affecting "Allow While Using App" Button
+    t =    57.05s     Synthesize event
+    t =    57.35s     Wait for com.apple.springboard to idle
+    t =    66.97s Added attachment named '04-Mappa'
+    t =    66.98s Tap "Luoghi" Button
+    t =    66.98s     Wait for com.itinera.app to idle
+    t =    66.98s     Find the "Luoghi" Button
+    t =    67.08s     Check for interrupting elements affecting "Luoghi" Button
+    t =    67.26s     Synthesize event
+    t =    67.58s     Wait for com.itinera.app to idle
+    t =    69.04s Added attachment named '05-Luoghi'
+    t =    72.21s Tap "Spese" Button
+    t =    72.21s     Wait for com.itinera.app to idle
+    t =    72.21s     Find the "Spese" Button
+    t =    72.26s     Check for interrupting elements affecting "Spese" Button
+    t =    72.32s     Synthesize event
+    t =    72.65s     Wait for com.itinera.app to idle
+    t =    74.03s Added attachment named '06-Spese'
+    t =    77.08s Waiting 5.0s for "add" Button to exist
+    t =    78.10s     Checking `Expect predicate `existsNoRetry == 1` for object "add" Button`
+    t =    78.10s         Checking existence of `"add" Button`
+    t =    78.13s Tap "add" Button
+    t =    78.13s     Wait for com.itinera.app to idle
+    t =    78.13s     Find the "add" Button
+    t =    78.16s     Check for interrupting elements affecting "add" Button
+    t =    78.20s     Synthesize event
+    t =    78.51s     Wait for com.itinera.app to idle
+    t =    78.67s Waiting 5.0s for "Annulla" Button to exist
+    t =    79.71s     Checking `Expect predicate `existsNoRetry == 1` for object "Annulla" Button`
+    t =    79.71s         Checking existence of `"Annulla" Button`
+    t =    80.92s Added attachment named '07-Nuova-spesa'
+    t =    83.36s Checking existence of `"Annulla" Button`
+    t =    83.41s Tap "Annulla" Button
+    t =    83.41s     Wait for com.itinera.app to idle
+    t =    83.41s     Find the "Annulla" Button
+    t =    83.47s     Check for interrupting elements affecting "Annulla" Button
+    t =    83.53s     Synthesize event
+    t =    83.82s     Wait for com.itinera.app to idle
+    t =    85.26s Tap "Cambio" Button
+    t =    85.26s     Wait for com.itinera.app to idle
+    t =    85.27s     Find the "Cambio" Button
+    t =    85.32s     Check for interrupting elements affecting "Cambio" Button
+    t =    85.41s     Synthesize event
+    t =    85.73s     Wait for com.itinera.app to idle
+    t =    89.12s Added attachment named '08-Cambio'
+    t =    92.38s Added attachment named 'audit'
+    t =    92.38s Tear Down
+Test Case '-[ItineraUITests.ScreenshotTests testMainScreens]' passed (92.846 seconds).
+Test Suite 'ScreenshotTests' passed at 2026-11-14 11:06:29.549.
+	 Executed 1 test, with 0 failures (0 unexpected) in 92.846 (92.847) seconds
+Test Suite 'ItineraUITests.xctest' passed at 2026-11-14 11:06:29.552.
+	 Executed 1 test, with 0 failures (0 unexpected) in 92.846 (92.850) seconds
+Test Suite 'All tests' passed at 2026-11-14 11:06:29.553.
+	 Executed 1 test, with 0 failures (0 unexpected) in 92.846 (92.859) seconds
+2026-11-14 11:06:31.682 xcodebuild[4507:18471] [MT] IDETestOperationsObserverDebug: 148.082 elapsed -- Testing started completed.
+2026-11-14 11:06:31.682 xcodebuild[4507:18471] [MT] IDETestOperationsObserverDebug: 0.001 sec, +0.001 sec -- start
+2026-11-14 11:06:31.682 xcodebuild[4507:18471] [MT] IDETestOperationsObserverDebug: 148.083 sec, +148.082 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/runner/work/Itinera/Itinera/TestResults.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

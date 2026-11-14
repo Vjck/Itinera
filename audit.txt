@@ -1,0 +1,117 @@
+01-Elenco-viaggi | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+02-Giorni | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+03-Nuova-tappa | contrasto | Contrast failed | Contrast failed for SwiftUI.AccessibilityNode
+03-Nuova-tappa | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+03-Nuova-tappa | contrasto | Contrast failed | Contrast failed for SwiftUI.AccessibilityNode
+03-Nuova-tappa | testo tagliato | Text clipped | Text of this UILabel may be clipped at larger Dynamic Type sizes.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+05-Luoghi | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+05-Luoghi | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+05-Luoghi | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+05-Luoghi | contrasto | Contrast failed | Contrast failed for SwiftUI.AccessibilityNode
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | area di tocco piccola | Hit area is too small | The size of this SwiftUI.AccessibilityNode is too small for user to interact.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast failed | Contrast failed for SwiftUI.AccessibilityNode
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+06-Spese | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+07-Nuova-spesa | contrasto | Contrast failed | Contrast failed for SwiftUI.AccessibilityNode
+08-Cambio | testo tagliato | Text clipped | Text of this UITextField may be clipped at larger Dynamic Type sizes.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
+08-Cambio | contrasto | Contrast nearly passed | Contrast is not high enough for SwiftUI.AccessibilityNode unless font size is larger.
