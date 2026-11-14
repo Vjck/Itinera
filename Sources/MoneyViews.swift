@@ -61,6 +61,8 @@ struct ExpensesView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button { adding = true } label: { Image(systemName: "plus") }
+                    .accessibilityIdentifier("add")
+                    .accessibilityLabel("Aggiungi")
             }
         }
         .sheet(isPresented: $adding) { ExpenseEditor(trip: trip) }

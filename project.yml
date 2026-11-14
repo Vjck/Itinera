@@ -29,3 +29,23 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.itinera.app
+  ItineraUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: Itinera
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.itinera.app.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Itinera
+schemes:
+  ItineraUITests:
+    build:
+      targets:
+        Itinera: all
+        ItineraUITests: [test]
+    test:
+      targets:
+        - ItineraUITests

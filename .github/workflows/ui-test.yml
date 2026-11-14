@@ -1,0 +1,107 @@
+name: Test grafici (simulatore)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Serve per pubblicare il report sul branch "ui-report".
+permissions:
+  contents: write
+
+concurrency:
+  group: ui-test
+  cancel-in-progress: true
+
+jobs:
+  ui-test:
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      PROJECT: Itinera.xcodeproj
+      SCHEME: ItineraUITests
+      BUNDLE_ID: com.itinera.app
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Installa XcodeGen
+        run: brew install xcodegen
+
+      - name: Genera il progetto Xcode
+        run: xcodegen generate
+
+      - name: Rileva Xcode, scheme e simulatori disponibili
+        run: |
+          mkdir -p report
+          {
+            echo "== Xcode in uso"; xcodebuild -version
+            echo; echo "== Xcode installati"; ls /Applications | grep -i '^Xcode' || true
+            echo; echo "== Progetto"; xcodebuild -list -project "$PROJECT"
+            echo; echo "== Simulatori disponibili"; xcrun simctl list devices available
+          } | tee report/ambiente.txt
+
+      - name: Scegli il simulatore iPhone
+        run: |
+          python3 scripts/pick_simulator.py | tee -a "$GITHUB_ENV"
+
+      - name: Avvia il simulatore
+        run: |
+          xcrun simctl boot "$SIM_UDID" || true
+          xcrun simctl bootstatus "$SIM_UDID" -b
+          xcrun simctl status_bar "$SIM_UDID" override --time "9:41" --batteryState charged --batteryLevel 100 || true
+          xcrun simctl privacy "$SIM_UDID" grant location "$BUNDLE_ID" || true
+          xcrun simctl location "$SIM_UDID" set 50.0875,14.4213 || true
+
+      - name: Compila ed esegui i test delle schermate
+        id: test
+        continue-on-error: true
+        run: |
+          xcodebuild test \
+            -project "$PROJECT" \
+            -scheme "$SCHEME" \
+            -destination "platform=iOS Simulator,id=$SIM_UDID" \
+            -derivedDataPath build-ui \
+            -resultBundlePath TestResults.xcresult \
+            > xcodebuild.log 2>&1
+
+      - name: Estrai screenshot dai risultati
+        if: always()
+        run: |
+          grep -E "error:|Test Case|\*\* TEST" xcodebuild.log | tail -n 60 || true
+          xcrun xcresulttool export attachments --path TestResults.xcresult --output-path attachments \
+            || echo "Estrazione degli allegati non riuscita"
+
+      - name: Genera il report
+        if: always()
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          UI_REVIEW_MODEL: ${{ vars.UI_REVIEW_MODEL }}
+          TEST_OUTCOME: ${{ steps.test.outcome }}
+        run: python3 scripts/ui_report.py
+
+      - name: Pubblica il report come artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-report
+          path: report
+          retention-days: 30
+
+      - name: Pubblica il report sul branch ui-report
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd report
+          git init -q -b ui-report
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -qm "Report grafico per ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" ui-report
+
+      - name: Esito finale
+        if: steps.test.outcome != 'success'
+        run: |
+          echo "I test delle schermate non sono stati superati: vedi il report."
+          exit 1

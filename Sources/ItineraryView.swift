@@ -107,6 +107,8 @@ struct ItineraryView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button { editing = Step(time: defaultTime(), title: "") } label: { Image(systemName: "plus") }
+                    .accessibilityIdentifier("add")
+                    .accessibilityLabel("Aggiungi")
             }
         }
         .sheet(item: $editing) { StepEditor(trip: trip, original: $0) }

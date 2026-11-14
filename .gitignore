@@ -4,3 +4,8 @@ Payload/
 *.ipa
 .DS_Store
 Support/
+build-ui/
+report/
+attachments/
+TestResults.xcresult
+xcodebuild.log

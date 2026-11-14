@@ -127,6 +127,8 @@ struct PlacesView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button { searching = true } label: { Image(systemName: "plus") }
+                    .accessibilityIdentifier("add")
+                    .accessibilityLabel("Aggiungi")
             }
         }
         .sheet(isPresented: $searching) { PlaceSearchView(trip: trip) }

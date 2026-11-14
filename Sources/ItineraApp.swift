@@ -59,6 +59,8 @@ struct TripListView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { creating = true } label: { Image(systemName: "plus") }
+                    .accessibilityIdentifier("add")
+                    .accessibilityLabel("Aggiungi")
                 }
             }
             .sheet(isPresented: $creating) { TripEditor(original: nil) }

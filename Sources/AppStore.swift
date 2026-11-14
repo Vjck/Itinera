@@ -14,7 +14,15 @@ final class AppStore: ObservableObject {
 
     private let fileURL: URL
 
+    /// Set by the UI tests: the app shows fixed demo data and never touches the saved trips.
+    static let demoMode = ProcessInfo.processInfo.arguments.contains("-uiTestDemo")
+
     init() {
+        if AppStore.demoMode {
+            fileURL = FileManager.default.temporaryDirectory.appendingPathComponent("trips-demo.json")
+            trips = [SampleData.demo()]
+            return
+        }
         fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("trips.json")
         if let data = try? Data(contentsOf: fileURL),
@@ -106,5 +114,44 @@ enum SampleData {
                 spot("Klementinum", 50.0866, 14.4163, .museum),
             ]
         )
+    }
+
+    /// Trip used only by the UI tests. Starts today so the "next step" badge shows; amounts are made up.
+    static func demo() -> Trip {
+        let cal = Calendar.current
+        let today = cal.startOfDay(for: Date())
+        var trip = prague()
+        trip.start = today
+        trip.end = cal.date(byAdding: .day, value: 4, to: today) ?? today
+        trip.budgetEUR = 600
+        func at(_ hour: Int, _ minute: Int = 0) -> Date {
+            cal.date(bySettingHour: hour, minute: minute, second: 0, of: today) ?? today
+        }
+        func id(_ name: String) -> UUID? {
+            trip.places.first { $0.name == name }?.id
+        }
+        if let i = trip.places.firstIndex(where: { $0.name == "Orologio astronomico" }) {
+            trip.places[i].priceLocal = 300
+            trip.places[i].note = "Salita alla torre, vista sulla piazza."
+        }
+        if let i = trip.places.firstIndex(where: { $0.name == "Castello di Praga" }) {
+            trip.places[i].priceLocal = 450
+        }
+        trip.steps = [
+            Step(time: at(9), title: "Colazione in centro", costLocal: 180, done: true),
+            Step(time: at(10), title: "", placeID: id("Piazza della Città Vecchia")),
+            Step(time: at(11, 30), title: "Salita alla torre", placeID: id("Orologio astronomico"), costLocal: 300,
+                 note: "Arrivare qualche minuto prima dell'ora piena."),
+            Step(time: at(13), title: "Pranzo tipico", costLocal: 450),
+            Step(time: at(15), title: "Passeggiata al tramonto", placeID: id("Ponte Carlo")),
+            Step(time: at(16, 30), title: "Visita del castello", placeID: id("Castello di Praga"), costLocal: 450),
+        ]
+        trip.expenses = [
+            Expense(date: at(9, 20), title: "Colazione", category: .food, amountLocal: 196, amountEUR: 8),
+            Expense(date: at(8, 30), title: "Biglietto 72 ore", category: .transport, amountLocal: 343, amountEUR: 14),
+            Expense(date: at(11, 40), title: "Torre dell'orologio", category: .tickets, amountLocal: 294, amountEUR: 12),
+            Expense(date: at(13, 45), title: "Pranzo", category: .food, amountLocal: 539, amountEUR: 22),
+        ]
+        return trip
     }
 }
