@@ -142,10 +142,14 @@ def main():
         (REPORT / "issues.json").write_text(json.dumps(issues, ensure_ascii=False, indent=2))
 
     lines += ["## Controllo automatico di accessibilità (Xcode)", ""]
-    rows = [row.split(" | ", 3) for row in audit.splitlines() if row.strip()]
-    if rows:
-        lines += ["| Schermata | Tipo | Problema | Dettaglio |", "|---|---|---|---|"]
-        lines += ["| " + " | ".join(cell(c) for c in (row + [""] * 4)[:4]) + " |" for row in rows]
+    counts = {}
+    for row in audit.splitlines():
+        if row.strip():
+            key = tuple((row.split(" | ", 3) + [""] * 4)[:4])
+            counts[key] = counts.get(key, 0) + 1
+    if counts:
+        lines += ["| Schermata | Tipo | Problema | Dettaglio | Elementi |", "|---|---|---|---|---|"]
+        lines += ["| " + " | ".join(cell(c) for c in key) + f" | {n} |" for key, n in counts.items()]
     else:
         lines.append("Nessun problema segnalato." if shots else "Controllo non eseguito.")
     (REPORT / "audit.txt").write_text(audit)

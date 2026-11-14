@@ -35,7 +35,8 @@ final class ScreenshotTests: XCTestCase {
         sheet("03-Nuova-tappa")
 
         panes.buttons["Mappa"].tap()
-        sleep(5) // map tiles
+        allowLocationIfAsked()
+        sleep(8) // map tiles
         capture("04-Mappa", audit: false)
 
         panes.buttons["Luoghi"].tap()
@@ -53,6 +54,23 @@ final class ScreenshotTests: XCTestCase {
         report.name = "audit"
         report.lifetime = .keepAlways
         add(report)
+    }
+
+    /// The location permission alert belongs to the system, not to the app: answer it there.
+    private func allowLocationIfAsked() {
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let english = springboard.buttons["Allow While Using App"]
+        if english.waitForExistence(timeout: 5) {
+            english.tap()
+            return
+        }
+        for label in ["Consenti mentre usi l’app", "Consenti mentre usi l'app"] {
+            let button = springboard.buttons[label]
+            if button.exists {
+                button.tap()
+                return
+            }
+        }
     }
 
     /// Opens the "+" sheet of the current section, captures it and closes it.
