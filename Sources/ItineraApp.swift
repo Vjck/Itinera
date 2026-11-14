@@ -17,6 +17,7 @@ struct TripListView: View {
     @EnvironmentObject var store: AppStore
     @State private var creating = false
     @State private var editing: Trip?
+    @AppStorage(MapsApp.key) private var mapsApp = MapsApp.apple.rawValue
 
     var body: some View {
         NavigationStack {
@@ -47,6 +48,15 @@ struct TripListView: View {
             }
             .navigationTitle("Viaggi")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        Picker("Apri le indicazioni con", selection: $mapsApp) {
+                            ForEach(MapsApp.allCases) { Text($0.title).tag($0.rawValue) }
+                        }
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { creating = true } label: { Image(systemName: "plus") }
                 }

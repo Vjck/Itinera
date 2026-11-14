@@ -1,19 +1,57 @@
 import SwiftUI
 import MapKit
 
-/// Opens Apple Maps with directions to `to`, starting from `from` or from the current position.
-func openDirections(from: Place?, to: Place, transit: Bool) {
-    var items: [MKMapItem] = []
-    if let from {
-        let source = MKMapItem(placemark: MKPlacemark(coordinate: from.coordinate))
-        source.name = from.name
-        items.append(source)
+/// App used for directions, chosen in the trip list menu.
+enum MapsApp: String, CaseIterable, Identifiable {
+    case apple, google
+
+    static let key = "mapsApp"
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .apple: return "Mappe di Apple"
+        case .google: return "Google Maps"
+        }
     }
-    let destination = MKMapItem(placemark: MKPlacemark(coordinate: to.coordinate))
-    destination.name = to.name
-    items.append(destination)
-    let mode = transit ? MKLaunchOptionsDirectionsModeTransit : MKLaunchOptionsDirectionsModeWalking
-    MKMapItem.openMaps(with: items, launchOptions: [MKLaunchOptionsDirectionsModeKey: mode])
+
+    static var current: MapsApp {
+        MapsApp(rawValue: UserDefaults.standard.string(forKey: key) ?? "") ?? .apple
+    }
+}
+
+/// Opens the chosen maps app with directions to `to`, starting from `from` or from the current position.
+func openDirections(from: Place?, to: Place, transit: Bool) {
+    switch MapsApp.current {
+    case .apple:
+        var items: [MKMapItem] = []
+        if let from {
+            let source = MKMapItem(placemark: MKPlacemark(coordinate: from.coordinate))
+            source.name = from.name
+            items.append(source)
+        }
+        let destination = MKMapItem(placemark: MKPlacemark(coordinate: to.coordinate))
+        destination.name = to.name
+        items.append(destination)
+        let mode = transit ? MKLaunchOptionsDirectionsModeTransit : MKLaunchOptionsDirectionsModeWalking
+        MKMapItem.openMaps(with: items, launchOptions: [MKLaunchOptionsDirectionsModeKey: mode])
+    case .google:
+        // Universal link: opens the Google Maps app when installed, otherwise the browser.
+        var components = URLComponents(string: "https://www.google.com/maps/dir/")
+        var query = [
+            URLQueryItem(name: "api", value: "1"),
+            URLQueryItem(name: "destination", value: "\(to.latitude),\(to.longitude)"),
+            URLQueryItem(name: "travelmode", value: transit ? "transit" : "walking"),
+        ]
+        if let from {
+            query.append(URLQueryItem(name: "origin", value: "\(from.latitude),\(from.longitude)"))
+        }
+        components?.queryItems = query
+        if let url = components?.url {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
 struct ItineraryView: View {
