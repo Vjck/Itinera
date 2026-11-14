@@ -1,0 +1,31 @@
+name: Itinera
+options:
+  bundleIdPrefix: com.itinera
+  deploymentTarget:
+    iOS: "18.0"
+settings:
+  base:
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1"
+targets:
+  Itinera:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    scheme: {}
+    info:
+      path: Support/Info.plist
+      properties:
+        CFBundleDisplayName: Itinera
+        CFBundleDevelopmentRegion: it
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        UILaunchScreen: {}
+        NSLocationWhenInUseUsageDescription: "Serve per mostrare la tua posizione sulla mappa del viaggio."
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.itinera.app
