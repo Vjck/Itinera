@@ -1,5 +1,12 @@
 import SwiftUI
 
+struct CategoryTotal: Identifiable {
+    let category: ExpenseCategory
+    let local: Double
+    let euro: Double
+    var id: String { category.rawValue }
+}
+
 struct ExpensesView: View {
     @EnvironmentObject var store: AppStore
     let trip: Trip
@@ -12,17 +19,23 @@ struct ExpensesView: View {
     var body: some View {
         List {
             Section { summary }
-            let totals = ExpenseCategory.allCases.compactMap { category -> (ExpenseCategory, Double)? in
-                let sum = trip.expenses.filter { $0.category == category }.reduce(0) { $0 + $1.amountEUR }
-                return sum > 0 ? (category, sum) : nil
+            let totals = ExpenseCategory.allCases.compactMap { category -> CategoryTotal? in
+                let items = trip.expenses.filter { $0.category == category }
+                guard !items.isEmpty else { return nil }
+                return CategoryTotal(category: category,
+                                     local: items.reduce(0) { $0 + $1.amountLocal },
+                                     euro: items.reduce(0) { $0 + $1.amountEUR })
             }
             if !totals.isEmpty {
                 Section("Per categoria") {
-                    ForEach(totals, id: \.0) { category, sum in
+                    ForEach(totals) { total in
                         HStack {
-                            Label(category.title, systemImage: category.icon)
-                            Spacer()
-                            DualPrice(local: trip.toLocal(sum), trip: trip)
+                            Image(systemName: total.category.icon)
+                                .foregroundStyle(Theme.accent)
+                                .frame(width: 26)
+                            Text(total.category.title)
+                            Spacer(minLength: 8)
+                            DualPrice(local: total.local, trip: trip, euro: total.euro)
                         }
                     }
                 }
@@ -43,12 +56,7 @@ struct ExpensesView: View {
                                 .foregroundStyle(.secondary)
                         }
                         Spacer(minLength: 8)
-                        VStack(alignment: .trailing, spacing: 1) {
-                            Text(money(expense.amountLocal, trip.currency)).font(.subheadline.weight(.semibold))
-                            if !trip.usesEuro {
-                                Text(money(expense.amountEUR, "EUR")).font(.caption).foregroundStyle(.secondary)
-                            }
-                        }
+                        DualPrice(local: expense.amountLocal, trip: trip, euro: expense.amountEUR)
                     }
                     .swipeActions {
                         Button("Elimina", role: .destructive) {
@@ -77,7 +85,7 @@ struct ExpensesView: View {
                     Text("Speso").font(.caption).foregroundStyle(.secondary)
                     Text(money(spent, "EUR")).font(.title2.weight(.bold))
                     if !trip.usesEuro {
-                        Text(money(trip.toLocal(spent), trip.currency)).font(.caption).foregroundStyle(.secondary)
+                        Text(money(trip.spentLocal, trip.currency)).font(.caption).foregroundStyle(.secondary)
                     }
                 }
                 Spacer()
@@ -144,7 +152,7 @@ struct ExpenseEditor: View {
                 Section {
                     TextField("Descrizione", text: $title)
                     Picker("Categoria", selection: $category) {
-                        ForEach(ExpenseCategory.allCases) { Label($0.title, systemImage: $0.icon).tag($0) }
+                        ForEach(ExpenseCategory.allCases) { Text($0.title).tag($0) }
                     }
                     DatePicker("Quando", selection: $date)
                 }

@@ -152,6 +152,10 @@ struct Trip: Codable, Identifiable, Equatable {
         expenses.reduce(0) { $0 + $1.amountEUR }
     }
 
+    var spentLocal: Double {
+        expenses.reduce(0) { $0 + $1.amountLocal }
+    }
+
     func place(_ id: UUID?) -> Place? {
         guard let id else { return nil }
         return places.first { $0.id == id }
@@ -170,6 +174,8 @@ func money(_ value: Double, _ code: String) -> String {
     formatter.numberStyle = .currency
     formatter.locale = Locale(identifier: "it_IT")
     formatter.currencyCode = code
+    formatter.usesGroupingSeparator = true
+    formatter.minimumGroupingDigits = 1
     return formatter.string(from: NSNumber(value: value)) ?? "\(value) \(code)"
 }
 
@@ -177,6 +183,8 @@ func money(_ value: Double, _ code: String) -> String {
 struct DualPrice: View {
     let local: Double
     let trip: Trip
+    /// Exact euro amount, when known; otherwise it is converted at the current rate.
+    var euro: Double?
     var alignment: HorizontalAlignment = .trailing
 
     var body: some View {
@@ -184,7 +192,7 @@ struct DualPrice: View {
             Text(money(local, trip.currency))
                 .font(.subheadline.weight(.semibold))
             if !trip.usesEuro {
-                Text("≈ " + money(trip.toEUR(local), "EUR"))
+                Text(euro.map { money($0, "EUR") } ?? "≈ " + money(trip.toEUR(local), "EUR"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -193,5 +201,5 @@ struct DualPrice: View {
 }
 
 enum Theme {
-    static let accent = Color(red: 0.0, green: 0.52, blue: 0.58)
+    static let accent = Color(red: 0.0, green: 0.44, blue: 0.50)
 }

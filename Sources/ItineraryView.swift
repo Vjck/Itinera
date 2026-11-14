@@ -154,8 +154,11 @@ struct ItineraryView: View {
                 Image(systemName: step.done ? "checkmark.circle.fill" : "circle")
                     .font(.title3)
                     .foregroundStyle(step.done ? Theme.accent : Color.secondary)
+                    .frame(width: 32, height: 44, alignment: .top)
+                    .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(step.done ? "Segna come da fare" : "Segna come fatta")
 
             VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 6) {
@@ -175,9 +178,11 @@ struct ItineraryView: View {
                     .font(.headline)
                     .strikethrough(step.done)
                 if let place = trip.place(step.placeID), !step.title.isEmpty {
-                    Label(place.name, systemImage: place.category.icon)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    HStack(spacing: 4) {
+                        Image(systemName: place.category.icon).font(.caption2)
+                        Text(place.name).font(.caption)
+                    }
+                    .foregroundStyle(.secondary)
                 }
                 if !step.note.isEmpty {
                     Text(step.note).font(.caption).foregroundStyle(.secondary)
@@ -209,10 +214,8 @@ struct ItineraryView: View {
             Spacer()
             Button("A piedi") { openDirections(from: from, to: to, transit: false) }
                 .buttonStyle(.bordered)
-                .controlSize(.small)
             Button("Mezzi") { openDirections(from: from, to: to, transit: true) }
                 .buttonStyle(.bordered)
-                .controlSize(.small)
         }
         .listRowSeparator(.hidden)
     }

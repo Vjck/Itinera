@@ -91,7 +91,6 @@ struct TripMapView: View {
                 }
             }
             .buttonStyle(.bordered)
-            .controlSize(.small)
         }
         .padding()
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
